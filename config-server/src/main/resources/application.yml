@@ -1,0 +1,23 @@
+server:
+  port: 9296
+spring:
+  application:
+    name: CONFIG-SERVER
+  profiles:
+    active: native
+  output:
+    ansi:
+      enabled: ALWAYS
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: classpath:/appconfig
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS
